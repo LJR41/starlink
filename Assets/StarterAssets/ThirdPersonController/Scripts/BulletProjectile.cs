@@ -26,11 +26,12 @@ public class BulletProjectile : MonoBehaviour {
         
         if (collision.gameObject.tag == "Enemy") 
         {
+            //We hit an enemy
             Instantiate(VfxHit, transform.position, UnityEngine.Quaternion.identity);
             Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
             enemy.TakeDamage(damage);
         }
-        
+
         else{
             // We hit something else
             Instantiate(VfxHitOther, transform.position, UnityEngine.Quaternion.identity);
