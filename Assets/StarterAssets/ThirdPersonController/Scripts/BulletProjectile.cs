@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletProjectile : MonoBehaviour {
 
     [SerializeField] private Transform VfxHit;
     [SerializeField] private Transform VfxHitOther;
+    public float damage = 20;
     private Rigidbody bulletRigidbody;
 
     private void Awake()
@@ -32,5 +34,16 @@ public class BulletProjectile : MonoBehaviour {
             Instantiate(VfxHitOther, transform.position, UnityEngine.Quaternion.identity);
         }
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponentInParent<Enemy>())
+        {
+            Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
+            enemy.TakeDamage(damage);
+        }
+        
+        // GameObject.FindGameObjectsWithTag("Enemy");
     }
 }
