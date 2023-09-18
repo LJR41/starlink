@@ -1,34 +1,30 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Runtime.Serialization;
+using UnityEngine;
 
-namespace starlink.Assets.StarterAssets.Enemys.SmallEnemy
-{
-    public class Enemy
+public class Enemy : MonoBehaviour
+{   
+    [SerializeField] float health;
+    
+    public void TakeDamage(float damage)
     {
-
-            
-        //protected is use so that this var can be used by the class and its children (like simple enemy) but no other scrip can acces is it
-        protected bool dead = false;
-
-
-
-        //------- this bool defines how to delete enemy from game
-        public bool Dead
+        if(health > 0)
         {
-            get
-            {
-                return dead;
-            }
-
-
+            health -= damage;
+        if(health<=0)
+        {
+            EnemyDeath();
+        };
+        UnityEngine.Debug.Log("Hit");
         }
-
-   
-
-
-
         
+    }
+    // Start is called before the first frame update
+
+    void EnemyDeath()
+    {
+        UnityEngine.Debug.Log("Death");
     }
 }
