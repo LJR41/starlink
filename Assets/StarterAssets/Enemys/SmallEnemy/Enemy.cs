@@ -25,31 +25,9 @@ namespace starlink.Assets.StarterAssets.Enemys.SmallEnemy
 
         }
 
-    //
-        protected virtual void OnLIghtspeedKill()
-        {
-            dead = true;
-            GetComponent<BoxCollider>().enabled = false;
-            
+   
 
 
-        }
-
-    protected virtual void OnKill()
-    {
-    //   -----------runs the public bool above to destroy the game object---
-            dead = true;
-
-
-    //  ------------------
-
-
-
-            GetComponent<BoxCollider>().enabled = false;
-
-            GameObject.Find("Playa").GetComponent<Playa>().Jump(true);
-
-    }
 
         
     }
