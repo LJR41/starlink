@@ -21,29 +21,20 @@ public class BulletProjectile : MonoBehaviour {
         bulletRigidbody.velocity = transform.forward * speed;
     }
 
-    private void OnTriggerEnter (Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.GetComponent<BulletTarget>() != null)
+        
+        if (collision.gameObject.tag == "Enemy") 
         {
-            // We hit a target
             Instantiate(VfxHit, transform.position, UnityEngine.Quaternion.identity);
+            Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
+            enemy.TakeDamage(damage);
         }
-
+        
         else{
             // We hit something else
             Instantiate(VfxHitOther, transform.position, UnityEngine.Quaternion.identity);
         }
         Destroy(gameObject);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponentInParent<Enemy>())
-        {
-            Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
-            enemy.TakeDamage(damage);
-        }
-        
-        // GameObject.FindGameObjectsWithTag("Enemy");
     }
 }
