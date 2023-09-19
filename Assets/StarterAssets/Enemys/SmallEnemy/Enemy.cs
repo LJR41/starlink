@@ -7,7 +7,17 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {   
     [SerializeField] float health;
-    
+
+
+    public void Awake()
+    {
+        
+    }
+
+    public void Update()
+    {
+        
+    }
     public void TakeDamage(float damage)
     {
         if(health > 0)
