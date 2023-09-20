@@ -9,6 +9,7 @@ public class BulletProjectile : MonoBehaviour {
     [SerializeField] private Transform VfxHitOther;
     public float damage = 20;
     private Rigidbody bulletRigidbody;
+    public Enemy _enemy;
 
     private void Awake()
     {
@@ -28,8 +29,8 @@ public class BulletProjectile : MonoBehaviour {
         {
             //We hit an enemy
             Instantiate(VfxHit, transform.position, UnityEngine.Quaternion.identity);
-            Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
-            enemy.TakeDamage(damage);
+            
+            _enemy.TakeDamage(damage);
         }
 
         else{
