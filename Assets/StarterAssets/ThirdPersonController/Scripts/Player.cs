@@ -6,7 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public int maxHealth = 100;
+    [SerializeField] int maxHealth = 100;
+
     public int currentHealth;
 
     public HealthBar healthBar;
@@ -20,13 +21,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.Space))
-       {
-            TakeDamage(10);
-       } 
+       //if(Input.GetKeyDown(KeyCode.Space))
+       //{
+       //     TakeDamage(10);
+       //} 
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
