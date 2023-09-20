@@ -9,19 +9,26 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {   
+    [Header("------------------Health Variables-------------------")]
     [SerializeField] float health = 50f;
     public float _Health
     {
         get { return health; }
         set { _Health = value;}
     }
+    [SerializeField] int damgeOutput = 2;
+    [SerializeField] float attackCooldown = 4f;
+    [SerializeField] float _lastAttackTime;
 
-    [SerializeField] int damgeOutput = 15;
+    [Header("------------------State Bools-------------------")]
+
     [SerializeField] bool attackState;
     [SerializeField] bool chasingState;
     [SerializeField] bool patrolState;
     [SerializeField] bool idelState;
 
+
+    [Header("------------------------------------")]
     public Transform playerTransform;
     GameObject playerObject;
     public Player _player;
@@ -39,8 +46,9 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        if (_player == null) _player = playerObject.GetComponent<Player>();
         InitializePatrolRoute();
+
+        if (_player == null) _player = GetComponent<Player>();
         playerTransform = GameObject.Find("Player").transform;
         if (patrolRoute == null) patrolRoute = patrolRoute.transform.Find("PatrolRoute");
         agent = GetComponent<NavMeshAgent>();
@@ -52,12 +60,10 @@ public class Enemy : MonoBehaviour
      void Start()
      {
         patrolState = true;
-        
-        
        
      }
 
-
+  
 
 
 
@@ -69,11 +75,13 @@ public class Enemy : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance))
         {
 
+            if (Time.time - _lastAttackTime < attackCooldown) return;
+
             if (hit.collider.CompareTag("Player"))
             {
                 _player.TakeDamage(damgeOutput);
                 UnityEngine.Debug.Log("Enemy touched the player!");
-
+                _lastAttackTime = Time.time;
             }
 
                 UnityEngine.Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
@@ -105,6 +113,8 @@ public class Enemy : MonoBehaviour
         }
         
      }
+
+
 
 
 
