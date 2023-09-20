@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour
     public Player _player;
 
 
+    public float raycastDistance = 1.0f;
+    //public LayerMask enemyLayer;
+
     public Transform patrolRoute;
     public List<Transform> locations;
 
@@ -55,11 +58,40 @@ public class Enemy : MonoBehaviour
      }
 
 
-     void Update()
-     {
-        while (patrolState == true)
+
+
+
+    private void FixedUpdate()
+    {
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance))
         {
-            print("PatrolState Active");
+
+            if (hit.collider.CompareTag("Player"))
+            {
+                _player.TakeDamage(damgeOutput);
+                UnityEngine.Debug.Log("Enemy touched the player!");
+
+            }
+
+                UnityEngine.Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+
+        }
+
+
+
+
+    }
+    void Update()
+     {
+
+        
+       
+        if (patrolState == true)
+        {
+            //print("PatrolState Active");
 
             if (agent.remainingDistance < 0.2f && !agent.pathPending) 
                 MoveToNextPatrolLocation();
@@ -67,6 +99,8 @@ public class Enemy : MonoBehaviour
 
         if(attackState == true)
         {
+
+            //print("AttackState Active");
             agent.destination = playerTransform.position;
         }
         
@@ -128,10 +162,20 @@ public class Enemy : MonoBehaviour
 
             agent.destination = playerTransform.position;
 
-            _player.TakeDamage(damgeOutput);
+            
+            
             print("Player Found Attacking!");
         }
 
+        
+    }
+
+    public void OnTriggerExit(Collider otherCollider)
+    {
+
+        attackState = false;
+        chasingState = false;
+        patrolState = true;
         
     }
 }
