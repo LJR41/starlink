@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
 
 
     public float raycastDistance = 1.0f;
-    //public LayerMask enemyLayer;
+    
 
     public Transform patrolRoute;
     public List<Transform> locations;
@@ -156,6 +156,7 @@ public class Enemy : MonoBehaviour
     public virtual void EnemyDeath()
     {
         UnityEngine.Debug.Log("Death");
+        Destroy(this.gameObject);
     }
 
     public void OnTriggerEnter(Collider otherCollider)
