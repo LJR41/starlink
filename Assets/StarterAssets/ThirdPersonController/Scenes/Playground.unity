@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 212695591}
   - component: {fileID: 212695584}
   - component: {fileID: 212695590}
+  - component: {fileID: 212695592}
   m_Layer: 6
   m_Name: SmallEnemy
   m_TagString: Enemy
@@ -338,7 +339,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212695583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e1ba3d2bb745944f9856e9ec00a4a8a, type: 3}
   m_Name: 
@@ -485,6 +486,31 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 7.54
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &212695592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212695583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604cf1d1efec4b742bd3ffcf60ae6cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  damgeOutput: 2
+  attackCooldown: 4
+  _lastAttackTime: 0
+  attackState: 0
+  chasingState: 0
+  patrolState: 0
+  idelState: 0
+  playerTransform: {fileID: 2055419557}
+  _player: {fileID: 1762682261}
+  raycastDistance: 1
+  patrolRoute: {fileID: 1982804032}
+  locations: []
 --- !u!1 &375739465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,7 +3485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1982804032}
   m_Layer: 0
-  m_Name: PatrolRoute
+  m_Name: S Enemy1_PatrolRoute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3483,6 +3509,11 @@ Transform:
   - {fileID: 1676095377}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2055419557 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2146586623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8345070699079395522, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}

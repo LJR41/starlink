@@ -116,7 +116,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    void MoveToNextPatrolLocation()
+    public virtual void MoveToNextPatrolLocation()
     {
         patrolState = true;
         if (locations.Count == 0) return;
@@ -126,7 +126,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void InitializePatrolRoute()
+   public virtual void InitializePatrolRoute()
     {
         patrolState = true;
         foreach ( Transform child in patrolRoute)
@@ -153,7 +153,7 @@ public class Enemy : MonoBehaviour
     }
     // Start is called before the first frame update
 
-    void EnemyDeath()
+    public virtual void EnemyDeath()
     {
         UnityEngine.Debug.Log("Death");
     }
