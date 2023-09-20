@@ -1074,3 +1074,107 @@ Assets/TerrainSampleAssets/Textures/Terrain/Tidal_Pools_Normal.tif
 Assets/TerrainSampleAssets/Textures/Terrain/Tidal_Pools_Normal.tif.meta
 Assets/TerrainSampleAssets/ThirdPartyNotices.txt
 Assets/TerrainSampleAssets/ThirdPartyNotices.txt.meta
+Assets/PickUp/AssetsStore.meta
+Assets/PickUp/AssetsStore/Wood Box.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials/Box_Wood_1.mat
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials/Box_Wood_1.mat.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials/Box_Wood_2.mat
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials/Box_Wood_2.mat.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials/Box_Wood_3.mat
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials/Box_Wood_3.mat.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials/Box_Wood_4.mat
+Assets/PickUp/AssetsStore/Wood Box/Assets/Materials/Box_Wood_4.mat.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/CardboardBox1.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/CardboardBox1.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/CardboardBox2.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/CardboardBox2.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/CardboardBox3.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/CardboardBox3.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/CardboardBox4.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/CardboardBox4.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/coil.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/coil.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox1.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox1.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox10.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox10.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox2.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox2.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox3.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox3.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox4.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox4.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox5.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox5.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox6.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox6.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox7.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox7.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox8.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox8.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox9.FBX
+Assets/PickUp/AssetsStore/Wood Box/Assets/Meshes/WoodBox9.FBX.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/CardboardBox1 1.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/CardboardBox1 1.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/CardboardBox1.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/CardboardBox1.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/CardboardBox3.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/CardboardBox3.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/CardboardBox4.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/CardboardBox4.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/coil.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/coil.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox1.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox1.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox10.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox10.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox2.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox2.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox3.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox3.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox4.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox4.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox5.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox5.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox6.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox6.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox7.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox7.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox8.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox8.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox9.prefab
+Assets/PickUp/AssetsStore/Wood Box/Assets/Prefabs/WoodBox9.prefab.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_1_AlbedoTransparency.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_1_AlbedoTransparency.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_1_MetallicSmoothness.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_1_MetallicSmoothness.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_1_Normal.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_1_Normal.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_2_AlbedoTransparency.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_2_AlbedoTransparency.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_2_MetallicSmoothness.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_2_MetallicSmoothness.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_2_Normal.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_2_Normal.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_3_AlbedoTransparency.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_3_AlbedoTransparency.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_3_MetallicSmoothness.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_3_MetallicSmoothness.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_3_Normal.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_3_Normal.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_4_AlbedoTransparency.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_4_AlbedoTransparency.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_4_MetallicSmoothness.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_4_MetallicSmoothness.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_4_Normal.tga
+Assets/PickUp/AssetsStore/Wood Box/Assets/Textures/Box_Wood_4_Normal.tga.meta
+Assets/PickUp/AssetsStore/Wood Box/Demo.meta
+Assets/PickUp/AssetsStore/Wood Box/Demo/Demo Scene.unity
+Assets/PickUp/AssetsStore/Wood Box/Demo/Demo Scene.unity.meta
+Assets/PickUp/AssetsStore/Wood Box/Demo/Demo SceneSettings.lighting
+Assets/PickUp/AssetsStore/Wood Box/Demo/Demo SceneSettings.lighting.meta
