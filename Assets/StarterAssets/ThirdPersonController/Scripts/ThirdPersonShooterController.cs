@@ -10,6 +10,9 @@ using System.Numerics;
 public class ThirdPersonShooterController : MonoBehaviour
 {
 
+
+    int isShootingHash;
+
      private Animator _animator;
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
     [SerializeField] private float NormalSensitivty;
@@ -21,9 +24,28 @@ public class ThirdPersonShooterController : MonoBehaviour
     private StarterAssetsInputs starterAssetsInputs;
     private ThirdPersonController thirdPersonController;
 
+    public void SetAnimBool(int hash, bool value)
+    {
+        _animator.SetBool(hash, value);
+    }
+
+    IEnumerator ShootingAnim()
+    {
+
+        SetAnimBool(isShootingHash, true);
+        yield return new WaitForSeconds(3f);
+        SetAnimBool(isShootingHash, false);
+
+    }
+
     private void Awake()
     {
+
+
         _animator = GetComponent<Animator>();
+
+        isShootingHash = Animator.StringToHash("isShooting");
+
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         thirdPersonController = GetComponent<ThirdPersonController>();
     }
@@ -59,6 +81,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         if(starterAssetsInputs.shoot)
         {
+            StartCoroutine(ShootingAnim());
             UnityEngine.Vector3 aimDir = (mouseWorldPosition - SpawnBulletPosition.position).normalized;
             Instantiate(BulletProjectile, SpawnBulletPosition.position, UnityEngine.Quaternion.LookRotation(aimDir, UnityEngine.Vector3.up ));
             starterAssetsInputs.shoot = false;
