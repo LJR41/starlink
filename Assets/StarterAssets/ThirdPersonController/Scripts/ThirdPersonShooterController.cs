@@ -45,7 +45,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         _animator = GetComponent<Animator>();
 
-        isShootingHash = Animator.StringToHash("isShooting");
+        isShootingHash = Animator.StringToHash("Shooting");
 
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         thirdPersonController = GetComponent<ThirdPersonController>();
@@ -54,6 +54,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private void Update()
     {
+        if(InventorySystem.Instance.isOpen == false){
         UnityEngine.Vector3 mouseWorldPosition = UnityEngine.Vector3.zero;
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if(Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
@@ -89,5 +90,6 @@ public class ThirdPersonShooterController : MonoBehaviour
             starterAssetsInputs.shoot = false;
             mAudioSrc.Play();
         }
+    }
     }
 }
