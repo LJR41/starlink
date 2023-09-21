@@ -34,7 +34,7 @@ public class BulletProjectile : MonoBehaviour {
             smallEnemy.TakeDamage(damage);
             print("Current Enemy health :"+smallEnemy._Health);
             Instantiate(VfxHit, transform.position, UnityEngine.Quaternion.identity);
-            UnityEngine.Debug.Log("Hit");
+            //UnityEngine.Debug.Log("Hit");
         }
 
         else{

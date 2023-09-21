@@ -9,6 +9,8 @@ using System.Numerics;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
+
+     private Animator _animator;
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
     [SerializeField] private float NormalSensitivty;
     [SerializeField] private float AimSensitivty;
@@ -21,6 +23,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         thirdPersonController = GetComponent<ThirdPersonController>();
     }

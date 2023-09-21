@@ -6,13 +6,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+   
+
     [SerializeField] int maxHealth = 100;
 
     public int currentHealth;
 
     public HealthBar healthBar;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
