@@ -195,6 +195,7 @@ namespace StarterAssets
 
         private void CameraRotation()
         {
+            if(InventorySystem.Instance.isOpen == false){
             // if there is an input and camera position is not fixed
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
@@ -212,10 +213,12 @@ namespace StarterAssets
             // Cinemachine will follow this target
             CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
                 _cinemachineTargetYaw, 0.0f);
+            }
         }
 
         private void Move()
         {
+            if(InventorySystem.Instance.isOpen == false){
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -284,10 +287,12 @@ namespace StarterAssets
                 _animator.SetFloat(_animIDSpeed, _animationBlend);
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
             }
+            }
         }
 
         private void JumpAndGravity()
         {
+            if(InventorySystem.Instance.isOpen == false){
             if (Grounded)
             {
                 // reset the fall timeout timer
@@ -352,6 +357,7 @@ namespace StarterAssets
             if (_verticalVelocity < _terminalVelocity)
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
+            }
             }
         }
 

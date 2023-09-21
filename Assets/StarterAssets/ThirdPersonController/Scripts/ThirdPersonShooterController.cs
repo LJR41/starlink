@@ -23,6 +23,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform SpawnBulletPosition;
     private StarterAssetsInputs starterAssetsInputs;
     private ThirdPersonController thirdPersonController;
+    private AudioSource mAudioSrc;
 
     public void SetAnimBool(int hash, bool value)
     {
@@ -48,10 +49,12 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         thirdPersonController = GetComponent<ThirdPersonController>();
+        mAudioSrc = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
+        if(InventorySystem.Instance.isOpen == false){
         UnityEngine.Vector3 mouseWorldPosition = UnityEngine.Vector3.zero;
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if(Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
@@ -85,6 +88,8 @@ public class ThirdPersonShooterController : MonoBehaviour
             UnityEngine.Vector3 aimDir = (mouseWorldPosition - SpawnBulletPosition.position).normalized;
             Instantiate(BulletProjectile, SpawnBulletPosition.position, UnityEngine.Quaternion.LookRotation(aimDir, UnityEngine.Vector3.up ));
             starterAssetsInputs.shoot = false;
+            mAudioSrc.Play();
         }
+    }
     }
 }
