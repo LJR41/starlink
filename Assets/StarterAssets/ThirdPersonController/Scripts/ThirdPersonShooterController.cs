@@ -44,7 +44,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         _animator = GetComponent<Animator>();
 
-        isShootingHash = Animator.StringToHash("isShooting");
+        isShootingHash = Animator.StringToHash("Shooting");
 
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         thirdPersonController = GetComponent<ThirdPersonController>();
