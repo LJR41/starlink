@@ -9,7 +9,7 @@ public class BulletProjectile : MonoBehaviour {
 
     [SerializeField] Transform VfxHit;
     [SerializeField] Transform VfxHitOther;
-    public float damage = 20;
+    public float damage = 5;
     private Rigidbody bulletRigidbody;
     
 
