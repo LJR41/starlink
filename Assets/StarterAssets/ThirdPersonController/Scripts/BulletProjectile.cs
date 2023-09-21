@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BulletProjectile : MonoBehaviour {
 
-    [SerializeField] private Transform VfxHit;
-    [SerializeField] private Transform VfxHitOther;
+    [SerializeField] Transform VfxHit;
+    [SerializeField] Transform VfxHitOther;
     public float damage = 20;
     private Rigidbody bulletRigidbody;
-    public Enemy _enemy;
+    
 
     private void Awake()
     {
         bulletRigidbody = GetComponent<Rigidbody>();
+        
     }
 
     private void Start()
@@ -22,15 +25,16 @@ public class BulletProjectile : MonoBehaviour {
         bulletRigidbody.velocity = transform.forward * speed;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision otherCollision)
     {
         
-        if (collision.gameObject.tag == "Enemy") 
+        if (otherCollision.gameObject.TryGetComponent<SmallEnemy>(out SmallEnemy smallEnemy)) 
         {
             //We hit an enemy
+            smallEnemy.TakeDamage(damage);
+            print("Current Enemy health :"+smallEnemy._Health);
             Instantiate(VfxHit, transform.position, UnityEngine.Quaternion.identity);
-            
-            _enemy.TakeDamage(damage);
+            UnityEngine.Debug.Log("Hit");
         }
 
         else{
