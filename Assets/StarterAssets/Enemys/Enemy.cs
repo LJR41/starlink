@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
         get { return health; }
         set { _Health = value;}
     }
+
     [SerializeField] int damgeOutput = 2;
     [SerializeField] float attackCooldown = 4f;
     [SerializeField] float _lastAttackTime;
@@ -46,11 +47,13 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+
+        FindPlayer();
+        FindSetPatrolRoute();
+
         InitializePatrolRoute();
 
-        if (_player == null) _player = GetComponent<Player>();
         playerTransform = GameObject.Find("Player").transform;
-        if (patrolRoute == null) patrolRoute = patrolRoute.transform.Find("PatrolRoute");
         agent = GetComponent<NavMeshAgent>();
 
         MoveToNextPatrolLocation();
@@ -60,6 +63,8 @@ public class Enemy : MonoBehaviour
      void Start()
      {
         patrolState = true;
+        ;
+        
        
      }
 
@@ -112,6 +117,38 @@ public class Enemy : MonoBehaviour
         
      }
 
+
+
+    public virtual void FindSetPatrolRoute()
+    {
+       
+        
+        if (patrolRoute == null)
+        {
+            patrolRoute = patrolRoute.Find("PatrolRoute").transform;
+        }
+        else UnityEngine.Debug.LogError("PatrolRoute not found!");
+
+        
+    }
+
+    public void FindPlayer()
+    {
+        playerTransform = GameObject.Find("Player").transform;
+        if (playerTransform == null)
+        {
+             UnityEngine.Debug.LogError("Player not found!");
+        }
+        else
+        {
+            playerObject = playerTransform.gameObject;
+            _player = playerObject.GetComponent<Player>();
+            if (_player == null)
+            {
+                UnityEngine.Debug.LogError("Player component not found on Player object!");
+            }
+        }
+    }
 
 
 
