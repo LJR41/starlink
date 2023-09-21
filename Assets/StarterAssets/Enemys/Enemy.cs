@@ -98,22 +98,26 @@ public class Enemy : MonoBehaviour
     void Update()
      {
 
-        
+        if (patrolRoute == null) return;
+        else
+        {
+
+            if (patrolState == true)
+            {
+                //print("PatrolState Active");
+
+                if (agent.remainingDistance < 0.2f && !agent.pathPending)
+                    MoveToNextPatrolLocation();
+            }
+
+            if (attackState == true)
+            {
+
+                //print("AttackState Active");
+                agent.destination = playerTransform.position;
+            }
+        }
        
-        if (patrolState == true)
-        {
-            //print("PatrolState Active");
-
-            if (agent.remainingDistance < 0.2f && !agent.pathPending) 
-                MoveToNextPatrolLocation();
-        }
-
-        if(attackState == true)
-        {
-
-            //print("AttackState Active");
-            agent.destination = playerTransform.position;
-        }
         
      }
 
