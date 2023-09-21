@@ -52,6 +52,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private void Update()
     {
+        if(InventorySystem.Instance.isOpen == false){
         UnityEngine.Vector3 mouseWorldPosition = UnityEngine.Vector3.zero;
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if(Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
@@ -86,5 +87,6 @@ public class ThirdPersonShooterController : MonoBehaviour
             Instantiate(BulletProjectile, SpawnBulletPosition.position, UnityEngine.Quaternion.LookRotation(aimDir, UnityEngine.Vector3.up ));
             starterAssetsInputs.shoot = false;
         }
+    }
     }
 }
