@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
     
 
     public Transform patrolRoute;
+    
     public List<Transform> locations;
 
 
@@ -98,55 +99,75 @@ public class Enemy : MonoBehaviour
     void Update()
      {
 
-        
+        UpDateState();
        
-        if (patrolState == true)
-        {
-            //print("PatrolState Active");
-
-            if (agent.remainingDistance < 0.2f && !agent.pathPending) 
-                MoveToNextPatrolLocation();
-        }
-
-        if(attackState == true)
-        {
-
-            //print("AttackState Active");
-            agent.destination = playerTransform.position;
-        }
         
      }
 
 
 
+    public virtual void UpDateState()
+    {
+        
+       
+        if (patrolRoute != null)
+        {
+
+            if (patrolState == true)
+            {
+                //print("PatrolState Active");
+
+                if (agent.remainingDistance < 0.2f && !agent.pathPending)
+                    MoveToNextPatrolLocation();
+            }
+
+            if (attackState == true)
+            {
+
+                //print("AttackState Active");
+                agent.destination = playerTransform.position;
+            }
+        }
+       
+    
+
+    }
+
     public virtual void FindSetPatrolRoute()
     {
-       
         
         if (patrolRoute == null)
         {
             patrolRoute = patrolRoute.Find("PatrolRoute").transform;
         }
-        else UnityEngine.Debug.LogError("PatrolRoute not found!");
-
-        
-    }
-
-    public void FindPlayer()
-    {
-        playerTransform = GameObject.Find("Player").transform;
-        if (playerTransform == null)
-        {
-             UnityEngine.Debug.LogError("Player not found!");
-        }
         else
         {
-            playerObject = playerTransform.gameObject;
-            _player = playerObject.GetComponent<Player>();
-            if (_player == null)
+            UnityEngine.Debug.LogError("PatrolRoute not found!");
+            
+        }
+
+       
+       
+
+
+
+        }
+
+        public void FindPlayer()
+        {
+            playerTransform = GameObject.Find("Player").transform;
+            if (playerTransform == null)
             {
-                UnityEngine.Debug.LogError("Player component not found on Player object!");
+                 UnityEngine.Debug.LogError("Player not found!");
             }
+            else
+            {
+                playerObject = playerTransform.gameObject;
+                _player = playerObject.GetComponent<Player>();
+                if (_player == null)
+                {
+                    UnityEngine.Debug.LogError("Player component not found on Player object!");
+                }
         }
     }
 

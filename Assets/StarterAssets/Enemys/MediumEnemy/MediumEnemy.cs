@@ -5,9 +5,5 @@ using UnityEngine;
 public class MediumEnemy : Enemy
 {
     
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
