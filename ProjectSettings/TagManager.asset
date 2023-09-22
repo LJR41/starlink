@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Slot
   - Bullet
+  - Structure
   layers:
   - Default
   - TransparentFX

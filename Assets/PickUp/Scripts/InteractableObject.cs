@@ -7,30 +7,31 @@ public class InteractableObject : MonoBehaviour
     public bool playerInRange;
     public string ItemName;
 
+    public bool hasItem;
+
+
+
     public string GetItemName()
     {
         return ItemName;
     }
-
+    
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.E) && playerInRange && SelectionManager.Instance.onTarget)
-        {
+        {   
+            
             if(!InventorySystem.Instance.CheckIfFull())
             {
             InventorySystem.Instance.AddToInventory(ItemName);
             Destroy(gameObject);
-
             }
             else
             {
                 Debug.Log("Inventory is full!!!");
             }
-
         }
-
-
-
     }
 
 
