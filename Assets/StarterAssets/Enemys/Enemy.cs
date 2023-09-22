@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
         set { _Health = value;}
     }
 
+    
+
     [SerializeField] int damgeOutput = 2;
     [SerializeField] float attackCooldown = 4f;
     [SerializeField] float _lastAttackTime;
@@ -43,6 +45,8 @@ public class Enemy : MonoBehaviour
     public List<Transform> locations;
 
 
+  
+
     private int locationIndex = 0;
     private NavMeshAgent agent;
 
@@ -55,6 +59,7 @@ public class Enemy : MonoBehaviour
         InitializePatrolRoute();
 
         playerTransform = GameObject.Find("Player").transform;
+        
         agent = GetComponent<NavMeshAgent>();
 
         MoveToNextPatrolLocation();
@@ -92,10 +97,17 @@ public class Enemy : MonoBehaviour
 
                 UnityEngine.Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
 
+
+
         }
 
 
     }
+
+    void LateUpdate()
+    {
+    }
+
     void Update()
      {
 
@@ -234,8 +246,10 @@ public class Enemy : MonoBehaviour
             print("Player Found Attacking!");
         }
 
-        
+
     }
+
+ 
 
     public void OnTriggerExit(Collider otherCollider)
     {

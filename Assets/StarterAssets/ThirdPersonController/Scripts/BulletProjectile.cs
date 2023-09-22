@@ -36,7 +36,6 @@ public class BulletProjectile : MonoBehaviour {
             Instantiate(VfxHit, transform.position, UnityEngine.Quaternion.identity);
             //UnityEngine.Debug.Log("Hit");
         }
-
         else{
             // We hit something else
             Instantiate(VfxHitOther, transform.position, UnityEngine.Quaternion.identity);
