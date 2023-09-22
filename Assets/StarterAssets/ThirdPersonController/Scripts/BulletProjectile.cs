@@ -41,6 +41,30 @@ public class BulletProjectile : MonoBehaviour {
             // We hit something else
             Instantiate(VfxHitOther, transform.position, UnityEngine.Quaternion.identity);
         }
+
+        if(otherCollision.gameObject.TryGetComponent<MediumEnemy>(out MediumEnemy mediumEnemy))
+        {
+            mediumEnemy.TakeDamage(damage);
+            print("Current Enemy health :" + mediumEnemy._Health);
+            Instantiate(VfxHit, transform.position, UnityEngine.Quaternion.identity);
+        }
+        else
+        {
+            // We hit something else
+            Instantiate(VfxHitOther, transform.position, UnityEngine.Quaternion.identity);
+        }
+
+        if (otherCollision.gameObject.TryGetComponent<BossEnemy>(out BossEnemy bossEnemy))
+        {
+            bossEnemy.TakeDamage(damage);
+            print("Current Enemy health :" + bossEnemy._Health);
+            Instantiate(VfxHit, transform.position, UnityEngine.Quaternion.identity);
+        }
+        else
+        {
+            // We hit something else
+            Instantiate(VfxHitOther, transform.position, UnityEngine.Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

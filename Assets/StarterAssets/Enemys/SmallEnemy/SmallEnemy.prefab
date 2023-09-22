@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5797513651687344526}
   - component: {fileID: 3123514991543982726}
   - component: {fileID: 480249331402414170}
+  - component: {fileID: 7641869063142810316}
   m_Layer: 6
   m_Name: SmallEnemy
   m_TagString: Enemy
@@ -176,3 +177,30 @@ MonoBehaviour:
   raycastDistance: 1
   patrolRoute: {fileID: 0}
   locations: []
+--- !u!54 &7641869063142810316
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098288324285393292}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
