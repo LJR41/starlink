@@ -15,6 +15,9 @@ namespace StarterAssets
 
 		public bool aim;
 		public bool shoot;
+		public bool build;
+
+		public bool hasItem;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -56,6 +59,11 @@ namespace StarterAssets
 		{
 			ShootInput(value.isPressed);
 		}
+
+		public void OnBuild(InputValue value)
+		{
+			BuildInput(value.isPressed);
+		}
 		
 #endif
 
@@ -88,6 +96,11 @@ namespace StarterAssets
 		public void ShootInput(bool newShootState)
 		{
 			shoot = newShootState;
+		}
+
+		public void BuildInput(bool newBuildState)
+		{
+			build = newBuildState;
 		}
 		
 		
