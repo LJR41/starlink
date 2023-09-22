@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
         set { _Health = value;}
     }
 
+    
+
     [SerializeField] int damgeOutput = 2;
     [SerializeField] float attackCooldown = 4f;
     [SerializeField] float _lastAttackTime;
@@ -24,6 +26,11 @@ public class Enemy : MonoBehaviour
     [Header("------------------State Bools-------------------")]
 
     [SerializeField] bool attackState;
+    public bool _attackState
+    {
+        get { return attackState;}
+        set { attackState = value;}
+    }
     [SerializeField] bool chasingState;
     [SerializeField] bool patrolState;
     [SerializeField] bool idelState;
@@ -43,10 +50,12 @@ public class Enemy : MonoBehaviour
     public List<Transform> locations;
 
 
+  
+
     private int locationIndex = 0;
     private NavMeshAgent agent;
 
-    private void Awake()
+    public void Awake()
     {
 
         FindPlayer();
@@ -55,6 +64,7 @@ public class Enemy : MonoBehaviour
         InitializePatrolRoute();
 
         playerTransform = GameObject.Find("Player").transform;
+        
         agent = GetComponent<NavMeshAgent>();
 
         MoveToNextPatrolLocation();
@@ -92,11 +102,18 @@ public class Enemy : MonoBehaviour
 
                 UnityEngine.Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
 
+
+
         }
 
 
     }
-    void Update()
+
+    void LateUpdate()
+    {
+    }
+
+    public void Update()
      {
 
         UpDateState();
@@ -168,8 +185,8 @@ public class Enemy : MonoBehaviour
                 {
                     UnityEngine.Debug.LogError("Player component not found on Player object!");
                 }
+            }
         }
-    }
 
 
 
@@ -219,14 +236,13 @@ public class Enemy : MonoBehaviour
 
     public void OnTriggerEnter(Collider otherCollider)
     {
-        if(otherCollider.name == "Player")
+        if(otherCollider.name == "Player" 
+        || otherCollider.name == "Bullet")
         {
             patrolState = false;
 
             chasingState = true;
             attackState = true;
-
-
             agent.destination = playerTransform.position;
 
             
@@ -234,8 +250,15 @@ public class Enemy : MonoBehaviour
             print("Player Found Attacking!");
         }
 
-        
+
+
+
+
+
+
     }
+
+ 
 
     public void OnTriggerExit(Collider otherCollider)
     {

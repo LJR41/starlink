@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     public int currentHealth;
 
+    [SerializeField] bool dead;
+
     public HealthBar healthBar;
     // Start is called before the first frame update
     void Awake()
@@ -23,10 +25,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //if(Input.GetKeyDown(KeyCode.Space))
-       //{
-       //     TakeDamage(10);
-       //} 
+        if (currentHealth <= 0)
+        dead = true;
+
+        KillPlayer();
+
+        
+    }
+
+    private void KillPlayer()
+    {
+        if (dead == true)
+            Destroy(this.gameObject);
     }
 
     public void TakeDamage(int damage)
@@ -35,4 +45,8 @@ public class Player : MonoBehaviour
         print(currentHealth);
         healthBar.SetHealth(currentHealth);
     }
+
+     
+
+   
 }
