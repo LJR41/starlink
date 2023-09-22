@@ -26,6 +26,11 @@ public class Enemy : MonoBehaviour
     [Header("------------------State Bools-------------------")]
 
     [SerializeField] bool attackState;
+    public bool _attackState
+    {
+        get { return attackState;}
+        set { attackState = value;}
+    }
     [SerializeField] bool chasingState;
     [SerializeField] bool patrolState;
     [SerializeField] bool idelState;
@@ -50,7 +55,7 @@ public class Enemy : MonoBehaviour
     private int locationIndex = 0;
     private NavMeshAgent agent;
 
-    private void Awake()
+    public void Awake()
     {
 
         FindPlayer();
@@ -108,7 +113,7 @@ public class Enemy : MonoBehaviour
     {
     }
 
-    void Update()
+    public void Update()
      {
 
         UpDateState();
@@ -180,8 +185,8 @@ public class Enemy : MonoBehaviour
                 {
                     UnityEngine.Debug.LogError("Player component not found on Player object!");
                 }
+            }
         }
-    }
 
 
 
@@ -231,20 +236,24 @@ public class Enemy : MonoBehaviour
 
     public void OnTriggerEnter(Collider otherCollider)
     {
-        if(otherCollider.name == "Player")
+        if(otherCollider.name == "Player" 
+        || otherCollider.name == "Bullet")
         {
             patrolState = false;
 
             chasingState = true;
             attackState = true;
-
-
             agent.destination = playerTransform.position;
 
             
             
             print("Player Found Attacking!");
         }
+
+
+
+
+
 
 
     }
